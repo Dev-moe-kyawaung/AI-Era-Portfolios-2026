@@ -1,215 +1,791 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Engineer + AI Era Portfolio 2026</title>
+    <meta name="description" content="Moe Kyaw Aung - Senior Android Developer | Microsoft Stack & Mobile | 10+ years experience">
+    <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, AI/ML, Cybersecurity, Myanmar">
+    <meta name="author" content="Moe Kyaw Aung">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Moe Kyaw Aung | Senior Android Developer">
+    <meta property="og:description" content="10+ years crafting scalable, production-grade Android applications">
+    <meta property="og:image" content="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747388/image-1_1_khsx9s.png">
+    
+    <title>မိုးကျော်အောင် · Moe Kyaw Aung | Senior Android Developer</title>
+    
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
 </head>
 <body class="dark-theme">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
     <!-- Animated Background -->
-    <div class="ai-background">
-        <div class="neural-network"></div>
-        <div class="floating-particles"></div>
+    <div class="bg-animation">
+        <div id="particles-js"></div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
     </div>
-
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747388/image-1_1_khsx9s.png" alt="Logo">
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <div class="loader-text">Loading Portfolio...</div>
+        </div>
+    </div>
+    
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand brand-glow" href="index.html">
-                <i class="fas fa-robot"></i> AI Engineer 2026
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">AI Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="roadmap.html">Roadmap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
+    <nav class="navbar-custom fixed-top" id="navbar">
+        <div class="container-fluid">
+            <div class="nav-wrapper">
+                <a class="navbar-brand" href="index.html">
+                    <div class="brand-logo">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747388/image-1_1_khsx9s.png" alt="MKA Logo">
+                    </div>
+                    <span class="brand-text">Moe Kyaw Aung</span>
+                </a>
+                
+                <div class="nav-center">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="skills.html" class="nav-link">Skills</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="certifications.html" class="nav-link">Certificates</a></li>
+                        <li><a href="github-repos.html" class="nav-link">GitHub</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
-
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certificates</a></li>
+                <li><a href="github-repos.html">GitHub</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <div class="container">
             <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6 hero-content">
-                    <div class="ai-badge mb-3">
-                        <i class="fas fa-sparkles"></i> Android + AI Engineer
-                    </div>
-                    <h1 class="hero-title gradient-text mb-4">
-                        Building the Future of
-                        <span class="d-block">AI-Powered Mobile</span>
-                    </h1>
-                    <p class="hero-subtitle mb-5">
-                        Senior Android Engineer specializing in on-device machine learning, 
-                        Gemini API integration, and intelligent mobile automation workflows.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="projects.html" class="btn btn-primary btn-glow me-3">
-                            <i class="fas fa-rocket"></i> View Projects
-                        </a>
-                        <a href="contact.html" class="btn btn-outline-light">
-                            <i class="fas fa-envelope"></i> Get in Touch
-                        </a>
-                    </div>
-                    <div class="tech-stack mt-5">
-                        <div class="tech-item">
-                            <i class="fab fa-android"></i>
-                            <span>Android</span>
+                <div class="col-lg-6 hero-left">
+                    <div class="hero-content">
+                        <div class="hero-badge animate-fade-in">
+                            <span class="badge-icon">🚀</span>
+                            <span>Senior Android Developer</span>
                         </div>
-                        <div class="tech-item">
-                            <i class="fas fa-brain"></i>
-                            <span>TensorFlow Lite</span>
+                        
+                        <h1 class="hero-title animate-slide-up">
+                            <span class="name-line">မိုးကျော်အောင် · </span>
+                            <span class="name-line">Moe Kyaw Aung</span>
+                        </h1>
+                        
+                        <div class="typing-container">
+                            <span class="typing-text" id="typingText"></span>
                         </div>
-                        <div class="tech-item">
-                            <i class="fas fa-gem"></i>
-                            <span>Gemini API</span>
+                        
+                        <p class="hero-description animate-fade-in delay-2">
+                            <strong>10+ years</strong> crafting scalable, production-grade Android applications with 
+                            <strong>Clean Architecture</strong>, <strong>Firebase</strong>, and modern <strong>DevOps</strong> practices.
+                        </p>
+                        
+                        <div class="hero-stats animate-fade-in delay-3">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="82">0</div>
+                                <div class="stat-label">Certificates</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="100">0</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="12">0</div>
+                                <div class="stat-label">Years Exp</div>
+                            </div>
                         </div>
-                        <div class="tech-item">
-                            <i class="fas fa-microchip"></i>
-                            <span>On-Device ML</span>
+                        
+                        <div class="hero-buttons animate-fade-in delay-4">
+                            <a href="projects.html" class="btn btn-primary btn-glow">
+                                <i class="fas fa-rocket"></i> View Projects
+                            </a>
+                            <a href="contact.html" class="btn btn-outline-glow">
+                                <i class="fas fa-envelope"></i> Contact Me
+                            </a>
+                            <a href="resume.pdf" class="btn btn-secondary btn-glow" download>
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                        </div>
+                        
+                        <div class="social-links hero-social animate-fade-in delay-5">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://bsky.app/profile/moekyawaung96.bsky.social" target="_blank" class="social-link">
+                                <i class="fas fa-cloud"></i>
+                            </a>
+                            <a href="https://www.tumblr.com/moekyawaung" target="_blank" class="social-link">
+                                <i class="fab fa-tumblr"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-visual">
-                    <div class="ai-visualization">
-                        <div class="holographic-sphere">
-                            <div class="sphere-ring ring-1"></div>
-                            <div class="sphere-ring ring-2"></div>
-                            <div class="sphere-ring ring-3"></div>
-                            <div class="sphere-core"></div>
+                
+                <div class="col-lg-6 hero-right">
+                    <div class="hero-visual">
+                        <div class="profile-container">
+                            <div class="profile-image-wrapper">
+                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png" 
+                                     alt="Moe Kyaw Aung" 
+                                     class="profile-image main-profile">
+                                <div class="profile-glow"></div>
+                            </div>
+                            
+                            <div class="floating-card card-1">
+                                <i class="fab fa-android"></i>
+                                <span>Android</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-brain"></i>
+                                <span>AI/ML</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Security</span>
+                            </div>
+                            <div class="floating-card card-4">
+                                <i class="fas fa-code"></i>
+                                <span>Kotlin</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
+    
+    <!-- App Collection Section -->
+    <section class="app-collection-section" id="apps">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
+            <div class="section-header text-center">
+                <div class="section-badge">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>App Collection</span>
+                </div>
+                <h2 class="section-title">Featured Applications</h2>
+                <p class="section-subtitle">16 Professional Android & Web Applications</p>
+            </div>
+            
+            <div class="apps-grid">
+                <!-- App 1: Social Dashboard -->
+                <div class="app-card" data-aos="fade-up">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795825/cloud-icon-poster-1_2_opl7sy.png" alt="Social Dashboard">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">AI Projects</div>
+                    </div>
+                    <div class="app-content">
+                        <div class="app-badge">NEW</div>
+                        <h3>Social Dashboard</h3>
+                        <p>Advanced social media analytics and management dashboard</p>
+                        <div class="app-tech">
+                            <span>Kotlin</span>
+                            <span>Compose</span>
+                            <span>Firebase</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-code-branch"></i>
+                
+                <!-- App 2: PWA App -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795675037_heh9xk.png" alt="PWA App">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/pwa-app" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <div class="stat-number" data-count="8">0</div>
-                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="app-content">
+                        <h3>PWA App</h3>
+                        <p>Progressive Web App with offline capabilities</p>
+                        <div class="app-tech">
+                            <span>React</span>
+                            <span>PWA</span>
+                            <span>Service Worker</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-download"></i>
+                
+                <!-- App 3: Admin Dashboard -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778794626112_ega7kk.png" alt="Admin Dashboard">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <div class="stat-number" data-count="2">0</div>
-                        <div class="stat-label">M+ Downloads</div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Admin Dashboard</h3>
+                        <p>Comprehensive admin panel for business management</p>
+                        <div class="app-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-award"></i>
+                
+                <!-- App 4: Stock Market -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795859/copilot_image_1778794430377_n7xlmz.png" alt="Stock Market">
+                        <div class="app-overlay">
+                            <a href="#" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <div class="stat-number" data-count="15">0</div>
-                        <div class="stat-label">Awards</div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Stock Market</h3>
+                        <p>Real-time stock tracking and trading platform</p>
+                        <div class="app-tech">
+                            <span>Kotlin</span>
+                            <span>WebSocket</span>
+                            <span>Charts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 5: Game Collection -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795000722_eo96gj.png" alt="Game Collection">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/game-collection" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Game Collection</h3>
+                        <p>Multiple casual games in one platform</p>
+                        <div class="app-tech">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 6: Music Player -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763531/MKA_12_iv8kpm.webp" alt="Music Player">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Music Player</h3>
+                        <p>Advanced music player with equalizer</p>
+                        <div class="app-tech">
+                            <span>Kotlin</span>
+                            <span>ExoPlayer</span>
+                            <span>Material</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 7: Chat App -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="Chat App">
+                        <div class="app-overlay">
+                            <a href="#" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Chat App</h3>
+                        <p>Real-time messaging with encryption</p>
+                        <div class="app-tech">
+                            <span>Firebase</span>
+                            <span>WebRTC</span>
+                            <span>E2EE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 8: World Cup -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image-1_f6zlmk.jpg" alt="World Cup">
+                        <div class="app-overlay">
+                            <a href="#" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>World Cup</h3>
+                        <p>Live scores and match analytics</p>
+                        <div class="app-tech">
+                            <span>API</span>
+                            <span>Real-time</span>
+                            <span>Sports</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 9: E-commerce -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image_1_buwgls.png" alt="E-commerce">
+                        <div class="app-overlay">
+                            <a href="#" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>E-commerce</h3>
+                        <p>Full-featured online shopping platform</p>
+                        <div class="app-tech">
+                            <span>React</span>
+                            <span>Stripe</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 10: Portfolio -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="900">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795822/preview_dzhqvv.webp" alt="Portfolio">
+                        <div class="app-overlay">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Portfolio</h3>
+                        <p>Professional portfolio website</p>
+                        <div class="app-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 11: Money Tracker -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795829/copilot_image_1778795000722_okryxj.png" alt="Money Tracker">
+                        <div class="app-overlay">
+                            <a href="#" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Money Tracker</h3>
+                        <p>Personal finance management</p>
+                        <div class="app-tech">
+                            <span>Kotlin</span>
+                            <span>Room</span>
+                            <span>Charts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 12: Weather -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795847/copilot_image_1778795115579_acfm5j.png" alt="Weather">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/Weather-app" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Weather</h3>
+                        <p>Accurate weather forecasting</p>
+                        <div class="app-tech">
+                            <span>API</span>
+                            <span>Location</span>
+                            <span>Forecast</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 13: Crypto -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795853/copilot_image_1778794781671_kytvkc.png" alt="Crypto">
+                        <div class="app-overlay">
+                            <a href="#" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Crypto</h3>
+                        <p>Cryptocurrency tracking & trading</p>
+                        <div class="app-tech">
+                            <span>Blockchain</span>
+                            <span>API</span>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 14: Todo -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="1300">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763531/MKA_3_zqrhhr.webp" alt="Todo">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/javascript-todo" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Todo</h3>
+                        <p>Task management with AI suggestions</p>
+                        <div class="app-tech">
+                            <span>JavaScript</span>
+                            <span>Local Storage</span>
+                            <span>AI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 15: Video Player -->
+                <div class="app-card" data-aos="fade-up" data-aos-delay="1400">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763532/MKA_11_jbijtv.webp" alt="Video Player">
+                        <div class="app-overlay">
+                            <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="app-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Video Player</h3>
+                        <p>Advanced video player with codec support</p>
+                        <div class="app-tech">
+                            <span>Kotlin</span>
+                            <span>ExoPlayer</span>
+                            <span>FFmpeg</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- App 16: LEGEND -->
+                <div class="app-card legend-card" data-aos="fade-up" data-aos-delay="1500">
+                    <div class="app-image">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763532/MKA_13_i4bao3.webp" alt="LEGEND">
+                        <div class="legend-badge">🏆 LEGEND</div>
+                    </div>
+                    <div class="app-content">
+                        <h3>LEGEND App</h3>
+                        <p>Flagship application with all features</p>
+                        <div class="app-tech">
+                            <span>Full Stack</span>
+                            <span>AI/ML</span>
+                            <span>Cloud</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Featured AI Integrations -->
-    <section class="featured-section py-5">
+    
+    <!-- GitHub Repositories Section -->
+    <section class="github-section" id="github">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">AI Integrations</h2>
-                <p class="section-subtitle">Cutting-edge AI capabilities in mobile applications</p>
+            <div class="section-header text-center">
+                <div class="section-badge">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Collections</span>
+                </div>
+                <h2 class="section-title">43 GitHub Pages</h2>
+                <p class="section-subtitle">Active open-source contributions and projects</p>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>On-Device ML</h4>
-                        <p>TensorFlow Lite and MediaPipe for real-time inference without cloud dependency</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Image Classification</li>
-                            <li><i class="fas fa-check"></i> Object Detection</li>
-                            <li><i class="fas fa-check"></i> Pose Estimation</li>
-                        </ul>
+            
+            <div class="github-grid">
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h4>moekyawaung.github.io</h4>
                     </div>
+                    <p>Main portfolio and personal website</p>
+                    <a href="https://moekyawaung.github.io/" target="_blank" class="github-link">
+                        <i class="fas fa-external-link-alt"></i> Visit
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h4>Gemini API</h4>
-                        <p>Google's most capable AI model for multimodal understanding and generation</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Text Generation</li>
-                            <li><i class="fas fa-check"></i> Image Analysis</li>
-                            <li><i class="fas fa-check"></i> Code Assistance</li>
-                        </ul>
+                
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h4>moekyawaung-tech.github.io</h4>
                     </div>
+                    <p>Technology projects and tutorials</p>
+                    <a href="https://moekyawaung-tech.github.io/" target="_blank" class="github-link">
+                        <i class="fas fa-external-link-alt"></i> Visit
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4>AI Assistants</h4>
-                        <p>Conversational AI and intelligent automation for enhanced user experiences</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Natural Language</li>
-                            <li><i class="fas fa-check"></i> Voice Commands</li>
-                            <li><i class="fas fa-check"></i> Smart Suggestions</li>
-                        </ul>
+                
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h4>moekyawaung-microsoft.github.io</h4>
                     </div>
+                    <p>Microsoft stack projects</p>
+                    <a href="https://moekyawaung-microsoft.github.io/" target="_blank" class="github-link">
+                        <i class="fas fa-external-link-alt"></i> Visit
+                    </a>
+                </div>
+                
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h4>moekyawaung-cyber.github.io</h4>
+                    </div>
+                    <p>Cybersecurity tools and resources</p>
+                    <a href="https://moekyawaung-cyber.github.io/" target="_blank" class="github-link">
+                        <i class="fas fa-external-link-alt"></i> Visit
+                    </a>
+                </div>
+                
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h4>moekyawaung-dev.github.io</h4>
+                    </div>
+                    <p>Development tools and utilities</p>
+                    <a href="https://moekyawaung-dev.github.io/" target="_blank" class="github-link">
+                        <i class="fas fa-external-link-alt"></i> Visit
+                    </a>
+                </div>
+                
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h4>Dev-moe-kyawaung.github.io</h4>
+                    </div>
+                    <p>Professional developer portfolio</p>
+                    <a href="https://dev-moe-kyawaung.github.io/" target="_blank" class="github-link">
+                        <i class="fas fa-external-link-alt"></i> Visit
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn btn-primary btn-glow">
+                    <i class="fab fa-github"></i> View All on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-badge">
+                    <i class="fas fa-envelope"></i>
+                    <span>Get In Touch</span>
+                </div>
+                <h2 class="section-title">Contact Information</h2>
+                <p class="section-subtitle">Multiple ways to reach out</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>Phone</h4>
+                    <p><a href="tel:+959889000889">+95 9 889 000 889</a></p>
+                    <p><a href="tel:+959666000050">+95 9 666 000 050</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:moekyawaung@programmer.net">moekyawaung@programmer.net</a></p>
+                    <p><a href="mailto:moekyawaung@technologist.com">moekyawaung@technologist.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Location</h4>
+                    <p>Tachileik, Myanmar 🇲🇲</p>
+                    <p>Bangkok, Thailand 🇹🇭</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <p><a href="https://github.com/Dev-moe-kyawaung/" target="_blank">Dev-moe-kyawaung</a></p>
+                </div>
+            </div>
+            
+            <div class="email-collection mt-5">
+                <h4 class="text-center mb-4">More Email Addresses</h4>
+                <div class="email-grid">
+                    <div class="email-item">moekyawaung@collector.org</div>
+                    <div class="email-item">moekyawaung@techie.com</div>
+                    <div class="email-item">moekyawaung@graphic-designer.com</div>
+                    <div class="email-item">moekyawaung@cybergal.com</div>
+                    <div class="email-item">moekyawaung@webname.com</div>
+                    <div class="email-item">moekyawaung@hackermail.com</div>
+                    <div class="email-item">moekyawaung@graduate.org</div>
+                    <div class="email-item">moekyawaung@engineer.com</div>
+                    <div class="email-item">moekyawaung@asia.com</div>
+                    <div class="email-item">moekyawaung@contractor.net</div>
+                    <div class="email-item">moekyawaung@linuxmail.org</div>
+                    <div class="email-item">moekyawaung@usa.com</div>
+                    <div class="email-item">moekyawaung@europe.com</div>
+                    <div class="email-item">moekyawaung@mail.com</div>
+                    <div class="email-item">moekyawaung@iname.com</div>
+                    <div class="email-item">moekyawaung@socialogist.com</div>
+                    <div class="email-item">moekyawaung@secretary.net</div>
+                    <div class="email-item">moekyawaung@publicist.com</div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="footer-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2026 Android AI Engineer Portfolio. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>မိုးကျော်အောင် · Moe Kyaw Aung</h3>
+                    <p>Senior Android Developer | Microsoft Stack & Mobile</p>
+                    <p class="quote">"Code is my language, Myanmar is my identity, and the world is my deployment target."</p>
                 </div>
-                <div class="col-md-6 text-end">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/Dev-moe-kyawaung/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://bsky.app/profile/moekyawaung96.bsky.social" target="_blank"><i class="fas fa-cloud"></i></a>
+                        <a href="https://www.tumblr.com/moekyawaung" target="_blank"><i class="fab fa-tumblr"></i></a>
+                        <a href="https://www.flickr.com/people/204037451@N06" target="_blank"><i class="fab fa-flickr"></i></a>
+                        <a href="https://gravatar.com/moekyawaung2026" target="_blank"><i class="fas fa-at"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Moe Kyaw Aung. Crafted with <i class="fas fa-heart"></i> in Myanmar 🇲🇲</p>
+                <p>Powered by Kotlin & Compose · Deployed to the World 🌏</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/typing.js"></script>
 </body>
 </html>
