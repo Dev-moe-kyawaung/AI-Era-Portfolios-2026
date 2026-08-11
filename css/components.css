@@ -1,0 +1,232 @@
+/* ============================================
+   Component Styles
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    padding: 180px 0 80px;
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+}
+
+/* Filter Buttons */
+.filter-btn {
+    background: var(--bg-tertiary);
+    border: var(--border-primary);
+    color: var(--text-secondary);
+    padding: 0.5rem 1.5rem;
+    margin: 0.25rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Project Card */
+.project-card {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: var(--border-primary);
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: var(--glow-primary);
+}
+
+/* Cert Card */
+.cert-card {
+    background: var(--bg-tertiary);
+    border: var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.cert-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Social Card */
+.social-card {
+    background: var(--bg-tertiary);
+    border: var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.social-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 4rem;
+    margin-bottom: 3rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Video Card */
+.video-card {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: var(--border-primary);
+}
+
+.video-player {
+    width: 100%;
+    max-height: 400px;
+}
+
+/* Blog Card */
+.blog-card {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: var(--border-primary);
+    transition: all 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-primary);
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    border: var(--border-primary);
+}
+
+/* Accordion */
+.accordion-button {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: var(--border-primary);
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--primary);
+    color: white;
+}
+
+/* Download Card */
+.download-card {
+    background: var(--bg-tertiary);
+    border: var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Achievement Card */
+.achievement-card {
+    background: var(--bg-tertiary);
+    border: var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Content Card */
+.content-card {
+    background: var(--bg-tertiary);
+    border: var(--border-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+}
+
+/* Error Section */
+.error-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error-code {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.error-title {
+    font-size: 4rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
